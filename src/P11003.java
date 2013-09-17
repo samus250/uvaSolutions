@@ -6,6 +6,7 @@ import java.util.Scanner;
  * @author samus250
  */
 public class P11003 {
+  // Max load given by problem constraints.
   static final int MAX_LOAD = 3000;
 
   public static void main(String[] args) {
