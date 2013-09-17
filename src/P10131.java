@@ -2,9 +2,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-
+/**
+ * Solves UVa problem 10131 "Is Bigger Smarter?".
+ * 
+ * @author samus250
+ */
 public class P10131 {
-
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     ArrayList<Elephant> elephants = new ArrayList<Elephant>(1001);
@@ -17,11 +20,11 @@ public class P10131 {
     }
     scanner.close();
 
-    // Sort the elephants.
+    // Sort the elephants by decreasing IQ and decreasing weight.
     Collections.sort(elephants);
 
-    // Now do LIS just like the Star Wars problem.
-    int length[] = new int[size]; // index holds the size
+    // Now do LIS just like the Strategic Defense Initiative problem.
+    int length[] = new int[size]; // index holds the size.
     int pred[] = new int[size];
     length[0] = 1;
     for (int i = 0; i < pred.length; i++) {
@@ -34,8 +37,7 @@ public class P10131 {
     for (int i = 1; i < size; i++) {
       int maxLength = 0;
       for (int j = 0; j < i; j++) {
-        if (maxLength < length[j] && elephants.get(i).weight >
-        elephants.get(j).weight) {
+        if (maxLength < length[j] && elephants.get(i).weight > elephants.get(j).weight) {
           pred[i] = j;
           maxLength = length[j];
         }
@@ -52,7 +54,7 @@ public class P10131 {
     buffer.append(Integer.toString(longestSequenceLength));
     buffer.append('\n');
 
-    // Trace longest sequence, order will first be reversed
+    // Trace longest sequence, order will first be reversed.
     int[] sequence = new int[longestSequenceLength];
     int pointer = longestSequenceFinishIndex;
     int j = longestSequenceLength - 1;
@@ -68,7 +70,7 @@ public class P10131 {
     }
     System.out.print(buffer);
   }
-  
+
   public static class Elephant implements Comparable<Elephant> {
     public int index;
     public int weight;
@@ -80,6 +82,9 @@ public class P10131 {
       this.iq = iq;
     }
 
+    /**
+     * The Elephants must be ordered by decreasing IQ and decreasing weight initially.
+     */
     @Override
     public int compareTo(Elephant b) {
       if (this.iq == b.iq) {

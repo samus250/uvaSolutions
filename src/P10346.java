@@ -3,8 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * Solves UVa problem 10346 "Peter's Smokes".
+ * 
+ * @author samus250
+ */
 public class P10346 {
-
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

@@ -6,10 +6,8 @@ import java.io.InputStreamReader;
  * Solves UVa problem 10055 "Hashmat the brave warrior".
  * 
  * @author samus250
- * 
  */
 public class P10055 {
-
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

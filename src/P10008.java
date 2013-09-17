@@ -6,8 +6,12 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * Solves UVa problem 10008 "What's Cryptanalysis?".
+ * 
+ * @author samus250
+ */
 public class P10008 {
-
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
@@ -21,6 +25,7 @@ public class P10008 {
       for (int j = 0; j < line.length(); j++) {
         char c = line.charAt(j);
         c = Character.toUpperCase(c);
+        // Just count the occurrences of each letter.
         if (c >= 'A' && c <= 'Z') {
           if (hashMap.containsKey(c)) {
             hashMap.put(c, hashMap.get(c) + 1);
@@ -30,12 +35,12 @@ public class P10008 {
         }
       }
     }
+    scanner.close();
 
     // Sort hashMap
     Set<Entry<Character, Integer>> entrySet = hashMap.entrySet();
     ArrayList<Entry<Character, Integer>> array = new ArrayList<Entry<Character, Integer>>(entrySet);
     Collections.sort(array, new Comparator<Entry<Character, Integer>>() {
-
       @Override
       public int compare(Entry<Character, Integer> o1, Entry<Character, Integer> o2) {
         if (o1.getValue() == o2.getValue()) {

@@ -2,6 +2,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Not solved yet.
+ * 
+ * @author samus250
+ */
 public class P264 {
 
   public static void main(String[] args) throws IOException {

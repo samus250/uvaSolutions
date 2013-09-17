@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
+/**
+ * Solves the UVa problem 116 "Undirectional TSP".
+ * 
+ * @author samus250
+ */
 public class P116 {
-
-  /**
-   * @param args
-   */
+  // Solved by DP.
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     while (scanner.hasNextInt()) {

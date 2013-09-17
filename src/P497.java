@@ -3,14 +3,19 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-
+/**
+ * Solves UVa problem 497 "Strategic Defense Initiative".
+ * 
+ * @author samus250
+ */
 public class P497 {
-
   public static void main(String[] args) throws NumberFormatException, IOException {
+    // Getting the input is just a little tricky because of the way the cases are separated.
+    // We don't know how many cases we will have until we cannot read any more from stdin.
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     int cases = Integer.parseInt(reader.readLine());
     reader.readLine();
-    
+
     ArrayList<Integer> missles;
     for (int i = 0; i < cases; i++) {
       String nextLine = reader.readLine();
@@ -23,7 +28,7 @@ public class P497 {
           break;
         }
       }
-      
+
       solve(missles);
       if (i < cases - 1) {
         System.out.println();
@@ -31,6 +36,11 @@ public class P497 {
     }
   }
 
+  /**
+   * Solves the problem with LIS algorithm.
+   * 
+   * @param missles The sequence of the height of the missles.
+   */
   public static void solve(ArrayList<Integer> missles) {
     int size = missles.size();
     int[] length = new int[size];
@@ -41,7 +51,8 @@ public class P497 {
     }
     int longestSequenceLength = 0;
     int longestSequenceFinishIndex = 0;
-    
+
+    // We fill up the DP tables.
     for (int i = 1; i < size; i++) {
       int maxLength = 0;
       for (int j = 0; j < i; j++) {
@@ -56,11 +67,11 @@ public class P497 {
         longestSequenceFinishIndex = i;
       }
     }
-    
+
     if (longestSequenceLength == 0) {
       longestSequenceLength = 1;
     }
-    
+
     // Now just follow the pointers from longestSequenceFinishIndex.
     int[] sequence = new int[longestSequenceLength];
     System.out.print("Max hits: " + longestSequenceLength + "\n");

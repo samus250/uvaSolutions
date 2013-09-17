@@ -2,8 +2,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * Solves UVa problem 10405 "Longest Common Subsequence".
+ * 
+ * @author samus250
+ */
 public class P10405 {
-
   public static void main(String[] args) throws IOException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 

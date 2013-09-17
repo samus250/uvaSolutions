@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * Not solved yet.
+ * 
+ * @author samus250
+ */
 public class P392 {
 
   public static void main(String[] args) throws IOException {

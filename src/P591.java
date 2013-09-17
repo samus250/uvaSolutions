@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
+/**
+ * Solves UVa problem 591 "Box of Bricks".
+ * 
+ * @author samus250
+ */
 public class P591 {
-
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     long setNumber = 0;
@@ -21,6 +25,8 @@ public class P591 {
 
       // Find height of stacks.
       int height = numOfBlocks / n;
+
+      // Move each additional block from the oversized stacks.
       int answer = 0;
       for (int i = 0; i < size; i++) {
         if (blocks[i] > height) {
@@ -33,6 +39,7 @@ public class P591 {
       n = scanner.nextInt();
       System.out.println();
     }
+    scanner.close();
   }
 
 }

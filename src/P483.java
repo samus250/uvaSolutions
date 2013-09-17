@@ -3,6 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+/**
+ * Solves UVa problem P483 "Word Scramble".
+ * 
+ * @author samus250
+ */
 public class P483 {
 
   public static void main(String[] args) throws IOException {
@@ -22,6 +27,7 @@ public class P483 {
         }
         System.out.print(reverse);
       }
+      scanner.close();
       System.out.println();
     } while (reader.ready());
   }

@@ -1,6 +1,11 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Solves UVa problem 10469 "To Carry or not to Carry".
+ * 
+ * @author samus250
+ */
 public class P10469 {
 
   public static void main(String[] args) throws IOException {
@@ -14,5 +19,6 @@ public class P10469 {
         break;
       }
     }
+    scanner.close();
   }
 }
